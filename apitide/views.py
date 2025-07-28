@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apitide.models import *
+from .models import *
 from django.core.mail import send_mail
 # Create your views here.
 

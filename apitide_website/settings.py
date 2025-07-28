@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-n!hfp#0n$0(m)2yx5)s1pd!5ozt@^1y=8xuk#lg8i!di#f8ij7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://apitide.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -142,10 +142,6 @@ EMAIL_HOST_USER = 'apitideinfo@gmail.com'     # Replace with your email
 EMAIL_HOST_PASSWORD = 'cztx sfox gpsu pfis'    # Use an App Password for Gmail
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
-if not EMAIL_HOST_USER or not EMAIL_HOST_PASSWORD:
-    raise ValueError("EMAIL_HOST_USER or EMAIL_HOST_PASSWORD is not set in environment variables")
 
 
