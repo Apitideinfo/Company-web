@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +21,11 @@
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#about" class="nav-link">About Us</a>
-                <a href="#projects" class="nav-link">Projects</a>
+               <!--<a href="#projects" class="nav-link">Projects</a>--> 
                 <a href="#work-with-us" class="nav-link">Work With Us</a>
                 <a href="#team" class="nav-link">Team</a>
                 <a href="#reviews" class="nav-link">Reviews</a>
-                <a href="#contact" class="nav-link">Contact Us</a>
-                
-            </nav>
+                <a href="#contact" class="nav-link contact-btn">Contact Us</a>
             <div class="mobile-menu-toggle">
                 <span></span>
                 <span></span>
@@ -43,10 +40,12 @@
         <section id="home" class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-headline">From Vision to Version – We Build What Matters.</h1>
-                    <p class="hero-tagline">We’re Apitide – Your Strategic Tech Partner
-From pixel-perfect designs to scalable backend systems, our team of developers, designers, and thinkers craft innovative digital solutions. Whether it's a custom website, a mobile app, or AI integration, we don't just deliver projects — we build impact.</p>
-                    <button class="cta-button">Get Started Today</button>
+                    <h1 class="hero-headline">From Vision to Version – We Build What <span class="highlight">Matters</span>.</h1>
+                    <p class="hero-tagline">We're Apitide – Your Strategic Tech Partner. From pixel-perfect designs to scalable backend systems, our team of developers, designers, and thinkers craft innovative digital solutions. Whether it's a custom website, a mobile app, or AI integration, we don't just deliver projects — we build impact.</p>
+                    <div class="hero-cta">
+                        <button class="contact-btn">Get Started Today</button>
+                        
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="{% static 'images/hero-image.jpg' %}" alt="Innovation at Apitide">
@@ -56,60 +55,54 @@ From pixel-perfect designs to scalable backend systems, our team of developers, 
 
         <!-- Services Section -->
         <section id="services" class="services-section">
-    <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-code"></i>
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom web solutions that drive business growth with modern technologies and best practices.</p>
+                    </div>
+                    <div class="service-card card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Apps</h3>
+                        <p>Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                    </div>
+                    <div class="service-card card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Build AI Agents</h3>
+                        <p>Custom AI agents to automate your business tasks and enhance operational efficiency.</p>
+                    </div>
+                    <div class="service-card card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>AI/API Integration</h3>
+                        <p>Seamlessly integrate AI and APIs into your workflow for enhanced functionality.</p>
+                    </div>
+                    <div class="service-card card">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Beautiful and intuitive user experiences that convert visitors into customers.</p>
+                    </div>
+                    <div class="service-card card">
+                        <div class="service-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3>WordPress Website</h3>
+                        <p>Professional WordPress websites with custom themes and powerful functionality.</p>
+                    </div>
                 </div>
-                <h3>Web Development</h3>
-                <p>Custom web solutions that drive business growth.</p>
             </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>Mobile Apps</h3>
-                <p>Native and cross-platform mobile applications.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3>Build AI Agents</h3>
-                <p>Custom AI agents to automate your business tasks.</p>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3>AI/API Integration</h3>
-                <p>Seamlessly integrate AI and APIs into your workflow.</p>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <h3>UI/UX Design</h3>
-                <p>Beautiful and intuitive user experiences.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-code"> </i>
-                </div>
-                <h3>WordPress Website</h3>
-                <p>Beautiful and intuitive user experiences.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- About Us Section -->
         <section id="about" class="about-section">
@@ -138,78 +131,85 @@ From pixel-perfect designs to scalable backend systems, our team of developers, 
             </div>
         </section>
 
-            <!-- Projects Section -->
-            <section id="projects" class="projects-section">
-                <div class="container">
-                    <h2 class="section-title">Our Projects</h2>
-                    <div class="projects-grid">
-                        <div class="project-card" 
-                            data-description="Health Wellness Platform <br> Tools: Python, AI, Machine Learning <br> Roles: Backend Development <br> System Scalability <br> a powerful platform designed to assist users in understanding and managing their health. Leveraging the capabilities of machine learning, our system analyzes user-input symptoms to predict potential diseases accurately." 
-                                data-images="images/project1_images/ss1.png,images/project1_images/ss2.png,images/project1_images/ss3.png">
-        
-        <div class="project-image">
-            <img src="{% static 'images/project1.png' %}" alt="Project 1">
-        </div>
+        <!-- Projects Section
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Our Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card card"
+                         data-description="Health Wellness Platform <br> Tools: Python, AI, Machine Learning <br> Roles: Backend Development <br> System Scalability <br> A powerful platform designed to assist users in understanding and managing their health. Leveraging the capabilities of machine learning, our system analyzes user-input symptoms to predict potential diseases accurately."
+                         data-images="images/project1_images/ss1.png,images/project1_images/ss2.png,images/project1_images/ss3.png">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=350" alt="Health Wellness Platform">
+                        </div>
+                        <div class="project-content">
+                            <h3>Health Wellness Platform</h3>
+                            <p>A platform to check symptoms using AI and provide health insights.</p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">Python</span>
+                                <span class="project-tech">AI</span>
+                                <span class="project-tech">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="project-content">
-            <h3>Health Wellness Platform</h3>
-            <p>A platform to check symptoms using AI.</p>
-            <span class="project-tech">Python • AI • Js</span>
-        </div>
-    </div>
-    <div class="project-card" 
-     data-description="AI Driven Personalized Tutor App <br>Tools: Python, Django, REST API, OpenAI API<br> Roles: Backend Development, API Integration <br> System Scalability <br> Built an AI-powered tutoring platform delivering personalized lessons, adaptive
-quizze, and real-time feedback using LLMs and Django REST API." 
-     data-images="images/project2_images/ss1.png,images/project2_images/ss2.png,images/project2_images/ss3.png">
-    
-    <div class="project-image">
-        <img src="{% static 'images/project2.png' %}" alt="Project 2">
-    </div>
+                    <div class="project-card card"
+                         data-description="AI Driven Personalized Tutor App <br>Tools: Python, Django, REST API, OpenAI API<br> Roles: Backend Development, API Integration <br> System Scalability <br> Built an AI-powered tutoring platform delivering personalized lessons, adaptive quizzes, and real-time feedback using LLMs and Django REST API."
+                         data-images="images/project2_images/ss1.png,images/project2_images/ss2.png,images/project2_images/ss3.png">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=350" alt="AI Tutor App">
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Based Tutor App</h3>
+                            <p>AI Driven Personalized Tutor App with adaptive learning capabilities.</p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">Python</span>
+                                <span class="project-tech">Django</span>
+                                <span class="project-tech">REST API</span>
+                                <span class="project-tech">OpenAI API</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="project-content">
-        <h3>AI based tutor app</h3>
-        <p>AI Driven Personalized Tutor App.</p>
-        <span class="project-tech">Python • Django • REST API • OpenAI API </span>
-    </div>
-</div>
-    <div class="project-card" 
-     data-description="E-commerce Website<br>
-Tools: Next.js, Tailwind CSS, Node.js, Stripe API, MongoDB<br>
-Roles: Frontend & Backend Development, Payment Integration<br>
-Features:<br>
-Developed a full-featured e-commerce website with product listings, cart functionality, secure checkout, and Stripe-based payment integration.<br> Included product filters, dynamic search, and admin panel for inventory management. <br> Designed with responsive UI and server-side rendering for performance and SEO." 
-     data-images="images/project3_images/ss1.jpg,images/project3_images/ss2.jpg,images/project3_images/ss3.jpg">
-    
-    <div class="project-image">
-        <img src="{% static 'images/project3.jpg' %}" alt="Project 3">
-    </div>
+                    <div class="project-card card"
+                         data-description="E-commerce Website<br>Tools: Next.js, Tailwind CSS, Node.js, Stripe API, MongoDB<br>Roles: Frontend & Backend Development, Payment Integration<br>Features:<br>Developed a full-featured e-commerce website with product listings, cart functionality, secure checkout, and Stripe-based payment integration.<br> Included product filters, dynamic search, and admin panel for inventory management. <br> Designed with responsive UI and server-side rendering for performance and SEO."
+                         data-images="images/project3_images/ss1.jpg,images/project3_images/ss2.jpg,images/project3_images/ss3.jpg">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=350" alt="E-commerce Website">
+                        </div>
+                        <div class="project-content">
+                            <h3>E-commerce Website</h3>
+                            <p>Full-featured e-commerce platform with secure payment integration.</p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">Next.js</span>
+                                <span class="project-tech">Tailwind CSS</span>
+                                <span class="project-tech">Node.js</span>
+                                <span class="project-tech">Stripe API</span>
+                                <span class="project-tech">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="project-content">
-        <h3>E-commerce Website</h3>
-        <p>E-commerce Website.</p>
-        <span class="project-tech">Next.js • Tailwind Css • Node.js • Stripe API • MongoDB</span>
-    </div>
-</div>
-<div class="project-card" 
-     data-description="Real-Time Chat Application<br>
-Tools: Node.js, Socket.IO, MongoDB, React.js<br>
-Roles: Full Stack Development, WebSocket Integration, Authentication<br>
-Features:<br>
-Built a real-time messaging platform enabling seamless one-on-one and group communication.<br> Integrated WebSocket (Socket.IO) for instant message delivery, user presence indicators, and live typing status.<br> Designed scalable chat architecture with user authentication, chat history storage, and responsive UI for web clients." 
-     data-images="{% static 'images/project4_images/ss1.jpg' %}">
-    
-    <div class="project-image">
-        <img src="{% static 'images/project4.jpg' %}" alt="Project 4">
-    </div>
-
-    <div class="project-content">
-        <h3>Real-Time Chat Application</h3>
-        <p>Real-Time Chat Application.</p>
-        <span class="project-tech">Node.js • Socket.IO • MongoDB • React.js</span>
-    </div>
-</div>
-
-        </section>
+                    <div class="project-card card"
+                         data-description="Real-Time Chat Application<br>Tools: Node.js, Socket.IO, MongoDB, React.js<br>Roles: Full Stack Development, WebSocket Integration, Authentication<br>Features:<br>Built a real-time messaging platform enabling seamless one-on-one and group communication.<br> Integrated WebSocket (Socket.IO) for instant message delivery, user presence indicators, and live typing status.<br> Designed scalable chat architecture with user authentication, chat history storage, and responsive UI for web clients."
+                         data-images="images/project4_images/ss1.jpg">
+                        <div class="project-image">
+                            <img src="/placeholder.svg?height=200&width=350" alt="Real-Time Chat Application">
+                        </div>
+                        <div class="project-content">
+                            <h3>Real-Time Chat Application</h3>
+                            <p>Scalable messaging platform with real-time communication features.</p>
+                            <div class="project-tech-container">
+                                <span class="project-tech">Node.js</span>
+                                <span class="project-tech">Socket.IO</span>
+                                <span class="project-tech">MongoDB</span>
+                                <span class="project-tech">React.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
         <!-- Work With Us Section -->
         <section id="work-with-us" class="cta-section">
@@ -224,81 +224,80 @@ Built a real-time messaging platform enabling seamless one-on-one and group comm
 
         <!-- Team Section -->
         <section id="team" class="team-section">
-    <div class="container">
-        <h2 class="section-title">Meet Our Team</h2>
-        
-        <div class="team-slider-wrapper">
-            <button class="slider-arrow team-prev-arrow">&#10094;</button>
-            <div class="team-slider-container">
-                <div class="team-slider-track">
-                    <div class="team-member">
-                        <h3>Paras Tomar</h3>
-                        <p class="member-role">Java Spring Boot Backend Developer</p>
-                        <p class="member-desc">A core backend architect of Apitide, Paras builds high-performance RESTful APIs and Java-based systems using Spring Boot. Known for writing scalable, clean code and keeping the backend rock-solid.</p>
+            <div class="container">
+                <h2 class="section-title">Meet Our Team</h2>
+                <div class="team-slider-wrapper">
+                    <button class="slider-arrow team-prev-arrow">&#10094;</button>
+                    <div class="team-slider-container">
+                        <div class="team-slider-track">
+                            <div class="team-member card">
+                                <h3>Paras Tomar</h3>
+                                <p class="member-role">Java Spring Boot Backend Developer</p>
+                                <p class="member-desc">A core backend architect of Apitide, Paras builds high-performance RESTful APIs and Java-based systems using Spring Boot. Known for writing scalable, clean code and keeping the backend rock-solid.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Narendra</h3>
+                                <p class="member-role">Quality Assurance (QA) Engineer</p>
+                                <p class="member-desc">With a sharp eye for detail, Narendra ensures every module is tested, verified, and client-ready. From bugs to performance issues, nothing escapes his checklist.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Mayank Joshi</h3>
+                                <p class="member-role">Python Django Backend Developer</p>
+                                <p class="member-desc">A backend powerhouse who works magic with Django and Python. Mayank's code is efficient, secure, and built to handle real-world workloads.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Ravindra</h3>
+                                <p class="member-role">Frontend Developer (HTML, CSS, JS, React)</p>
+                                <p class="member-desc">Ravindra transforms concepts into stunning user interfaces. Whether it's responsive layouts or dynamic interactivity, his frontends bring designs to life.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Shivam Shekhawat</h3>
+                                <p class="member-role">Full Stack Developer (MERN Stack)</p>
+                                <p class="member-desc">Equally strong on both ends — Shivam handles everything from React components to MongoDB queries. He's the glue between UI polish and backend logic.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Urmila</h3>
+                                <p class="member-role">AI/ML Specialist (Python)</p>
+                                <p class="member-desc">A thinker and innovator, Urmila works on smart algorithms, predictive models, and intelligent systems using Python and ML libraries.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Aashi Khendelwal</h3>
+                                <p class="member-role">AI/ML Specialist (Python)</p>
+                                <p class="member-desc">Curious and creative, Aashi brings data to life through machine learning models that solve complex problems with elegant code.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Lovely Gaur</h3>
+                                <p class="member-role">AI/ML Specialist (Python)</p>
+                                <p class="member-desc">From training deep learning models to automating workflows, Lovely brings AI capabilities into Apitide's solutions with confidence and precision.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Neha Pareek</h3>
+                                <p class="member-role">Business Development Associate (BDA)</p>
+                                <p class="member-desc">Neha plays a vital role in driving partnerships and exploring new client opportunities. She's strategic, professional, and always pitching Apitide in the best light.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Raksha</h3>
+                                <p class="member-role">Business Development Associate (BDA)</p>
+                                <p class="member-desc">A strong communicator and client coordinator, Payal ensures projects align with client needs while expanding Apitide's business reach.</p>
+                            </div>
+                            <div class="team-member card">
+                                <h3>Mukund</h3>
+                                <p class="member-role">Business Development Associate (BDA)</p>
+                                <p class="member-desc">Rahul focuses on building networks, initiating deals, and helping Apitide scale through smart business moves and relationship-building.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-member">
-                        <h3>Shree Ballabh</h3>
-                        <p class="member-role">Quality Assurance (QA) Engineer</p>
-                        <p class="member-desc">With a sharp eye for detail, Shri ensures every module is tested, verified, and client-ready. From bugs to performance issues, nothing escapes his checklist.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Mayank Joshi</h3>
-                        <p class="member-role">Python Django Backend Developer</p>
-                        <p class="member-desc">A backend powerhouse who works magic with Django and Python. Mayank’s code is efficient, secure, and built to handle real-world workloads.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Ravindra</h3>
-                        <p class="member-role">Frontend Developer (HTML, CSS, JS, React)</p>
-                        <p class="member-desc">Ravindra transforms concepts into stunning user interfaces. Whether it’s responsive layouts or dynamic interactivity, his frontends bring designs to life.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Shivam Shekhawat</h3>
-                        <p class="member-role">Full Stack Developer (MERN Stack)</p>
-                        <p class="member-desc">Equally strong on both ends — Shivam handles everything from React components to MongoDB queries. He’s the glue between UI polish and backend logic.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Urmila</h3>
-                        <p class="member-role">AI/ML Specialist (Python)</p>
-                        <p class="member-desc">A thinker and innovator, Urmila works on smart algorithms, predictive models, and intelligent systems using Python and ML libraries.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Aashi Khendelwal</h3>
-                        <p class="member-role">AI/ML Specialist (Python)</p>
-                        <p class="member-desc">Curious and creative, Aashi brings data to life through machine learning models that solve complex problems with elegant code.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Lovely Gaur</h3>
-                        <p class="member-role">AI/ML Specialist (Python)</p>
-                        <p class="member-desc">From training deep learning models to automating workflows, Lovely brings AI capabilities into Apitide’s solutions with confidence and precision.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Neha Pareek</h3>
-                        <p class="member-role">Business Development Associate (BDA)</p>
-                        <p class="member-desc">Neha plays a vital role in driving partnerships and exploring new client opportunities. She's strategic, professional, and always pitching Apitide in the best light.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Raksha</h3>
-                        <p class="member-role">Business Development Associate (BDA)</p>
-                        <p class="member-desc">A strong communicator and client coordinator, Raksha ensures projects align with client needs while expanding Apitide’s business reach.</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Mukund</h3>
-                        <p class="member-role">Business Development Associate (BDA)</p>
-                        <p class="member-desc">Mukund focuses on building networks, initiating deals, and helping Apitide scale through smart business moves and relationship-building.</p>
-                    </div>
+                    <button class="slider-arrow team-next-arrow">&#10095;</button>
                 </div>
             </div>
-            <button class="slider-arrow team-next-arrow">&#10095;</button>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Reviews Section -->
         <section id="reviews" class="reviews-section">
             <div class="container">
                 <h2 class="section-title">What Our Clients Say</h2>
                 <div class="reviews-grid">
-                    <div class="review-card">
+                    <div class="review-card card">
                         <div class="review-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -306,16 +305,16 @@ Built a real-time messaging platform enabling seamless one-on-one and group comm
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Apitide delivered exactly what we needed. Their attention to detail and professionalism is outstanding."</p>
+                        <p>"Apitide delivered exactly what we needed. Their attention to detail and professionalism is outstanding. The team went above and beyond our expectations."</p>
                         <div class="review-author">
-                            <img src="images/client1.jpg" alt="Sarah Wilson">
+                           
                             <div>
                                 <h4>Sarah Wilson</h4>
                                 <span>CEO, TechStart</span>
                             </div>
                         </div>
                     </div>
-                    <div class="review-card">
+                    <div class="review-card card">
                         <div class="review-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -323,9 +322,9 @@ Built a real-time messaging platform enabling seamless one-on-one and group comm
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Working with Apitide was a game-changer for our business. Highly recommended!"</p>
+                        <p>"Working with Apitide was a game-changer for our business. Their innovative solutions and timely delivery made all the difference. Highly recommended!"</p>
                         <div class="review-author">
-                            <img src="images/client2.jpg" alt="David Brown">
+                            
                             <div>
                                 <h4>David Brown</h4>
                                 <span>Founder, InnovateCo</span>
@@ -345,37 +344,47 @@ Built a real-time messaging platform enabling seamless one-on-one and group comm
                         <form id="contactForm" method="POST" action="">
                             {% csrf_token %}
                             <div class="form-group">
+                                <label for="name">Full Name</label>
                                 <input type="text" id="name" name="name" placeholder="Your Name" required>
                             </div>
                             <div class="form-group">
+                                <label for="email">Email Address</label>
                                 <input type="email" id="email" name="email" placeholder="Your Email" required>
                             </div>
                             <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
                             </div>
                             <button type="submit" class="submit-btn">Send Message</button>
                         </form>
                     </div>
                     <div class="contact-info">
-                        <div class="contact-item">
+                        <div class="contact-item card">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
                                 <p>apitideinfo@gmail.com</p>
+                               
                             </div>
                         </div>
-                        <div class="contact-item">
+                        <div class="contact-item card">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
+                                <p>7877813270</p>
+                              
                             </div>
                         </div>
-                        <div class="contact-item">
+                        <div class="contact-item card">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>Location</h4>
-                                <p>Rajasthan, India</p>
+                                <p>MDV Colony</p>
+                                <p>Bikaner</p>
                             </div>
                         </div>
                     </div>
@@ -383,6 +392,132 @@ Built a real-time messaging platform enabling seamless one-on-one and group comm
             </div>
         </section>
     </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <img src="{% static 'images/logo.png' %}" alt="Apitide Logo" class="footer-logo">
+                        <span class="footer-company-name">Apitide</span>
+                    </div>
+                    <p class="footer-description">
+                        From Vision to Version – We Build What Matters. Your strategic tech partner for innovative digital solutions.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/apitide-info-22b182377" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/apitide.info?igsh=N3BzZzhkajE3N3hw" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <!-- <li><a href="#projects">Projects</a></li> -->
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Mobile Apps</a></li>
+                        <li><a href="#services">AI Agents</a></li>
+                        <li><a href="#services">API Integration</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">WordPress Sites</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Get In Touch</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p>apitideinfo@gmail.com</p>
+            
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <p>7877813270</p>
+                                
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p>MDV Colony</p>
+                                <p>Bikaner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Stay Updated</h4>
+                    <p class="newsletter-text">Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="footer-certifications">
+                        <p class="cert-text">Trusted & Certified</p>
+                        <div class="cert-badges">
+                            <span class="cert-badge">ISO 9001</span>
+                            <span class="cert-badge">GDPR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2025 Apitide. All rights reserved.</p>
+                    </div>
+                  
+                    <div class="footer-back-to-top">
+                        <button class="back-to-top-btn" aria-label="Back to top">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Popup Modal -->
     <div id="connectPopup" class="popup-modal">
@@ -396,21 +531,25 @@ Built a real-time messaging platform enabling seamless one-on-one and group comm
             </div>
         </div>
     </div>
-<div id="projectModal" class="project-modal">
-    <div class="project-modal-container">
-        <span class="close-project-modal">&times;</span>
-        <div class="project-modal-details">
-            <p id="modalProjectDescription"></p>
-            <div class="modal-screenshots-grid" id="modalScreenshotsGrid">
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-container">
+            <span class="close-project-modal">&times;</span>
+            <div class="project-modal-details">
+                <p id="modalProjectDescription"></p>
+                <div class="modal-screenshots-grid" id="modalScreenshotsGrid">
                 </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-image-modal">&times;</span>
+        <img class="image-modal-content" id="fullSizeImage">
+    </div>
 
     <script src="{% static 'js/script.js' %}"></script>
-    <div id="imageModal" class="image-modal">
-    <span class="close-image-modal">&times;</span>
-    <img class="image-modal-content" id="fullSizeImage">
-</div>
 </body>
 </html>
