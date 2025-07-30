@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-n!hfp#0n$0(m)2yx5)s1pd!5ozt@^1y=8xuk#lg8i!di#f8ij7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["'.fly.dev', os.environ.get('FLY_PUBLIC_HOSTNAME')"]
 
 
 # Application definition
@@ -77,12 +77,9 @@ WSGI_APPLICATION = 'apitide_website.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        conn_max_age=600,
-        ssl_require=True,
-        default=os.environ.get('DATABASE_URL')
-    )
+     'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
+# 'postgresql://neondb_owner:npg_n8OJEIDS2ush@ep-sparkling-band-a1tryanv-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
