@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,14 +82,22 @@ WSGI_APPLICATION = 'apitide_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Render PostgreSQL DB config
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=600,  # recommended for production
-        ssl_require=True
-    )
-}
+# Database configuration: Use SQLite locally, PostgreSQL on Render
+if os.environ.get('DATABASE_URL'):
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 # 'postgresql://neondb_owner:npg_n8OJEIDS2ush@ep-sparkling-band-a1tryanv-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
 # Password validation
@@ -173,5 +182,5 @@ LOGGING = {
 }
 
 
-
+print("DATABASE_URL:", os.environ.get("DATABASE_URL"))
 
