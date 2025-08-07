@@ -27,7 +27,12 @@ SECRET_KEY = 'django-insecure-n!hfp#0n$0(m)2yx5)s1pd!5ozt@^1y=8xuk#lg8i!di#f8ij7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["'.fly.dev', os.environ.get('FLY_PUBLIC_HOSTNAME')"]
+ALLOWED_HOSTS = [
+    '.onrender.com',  # Allow Render domain
+    'localhost',     # For local testing
+    '127.0.0.1',
+    os.environ.get('RENDER_EXTERNAL_HOSTNAME'),
+]
 
 
 # Application definition
@@ -76,8 +81,13 @@ WSGI_APPLICATION = 'apitide_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Render PostgreSQL DB config
 DATABASES = {
-     'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600,  # recommended for production
+        ssl_require=True
+    )
 }
 # 'postgresql://neondb_owner:npg_n8OJEIDS2ush@ep-sparkling-band-a1tryanv-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
@@ -139,6 +149,28 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apitideinfo@gmail.com'     # Replace with your email
 EMAIL_HOST_PASSWORD = 'cztx sfox gpsu pfis'    # Use an App Password for Gmail
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Security settings for Render
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# Error logging for debugging 500 errors
+import logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
 
 
 

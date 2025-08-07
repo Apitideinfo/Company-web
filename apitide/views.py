@@ -20,13 +20,10 @@ def home(request):
             from_email = None  # Uses DEFAULT_FROM_EMAIL
             recipient_list = [email]
 
-            send_mail(subject, body, from_email, recipient_list)
-
             try:
                 send_mail(subject, body, from_email, recipient_list)
             except Exception as e:
                 print(f"Email failed to send: {e}")  # Logs on Render
-
 
             return redirect('/?success=true')
 
